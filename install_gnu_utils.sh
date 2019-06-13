@@ -36,7 +36,6 @@ brew install git
 brew install less
 brew install openssh
 brew install perl518   # must run "brew tap homebrew/versions" first!
-brew install python
 brew install rsync
 brew install svn
 brew install unzip

@@ -118,6 +118,3 @@ source ~/.bash_profile
 
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)
-
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/unzip/bin:$PATH"

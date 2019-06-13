@@ -1,5 +1,9 @@
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/unzip/bin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="$PATH:/Users/$(whoami)/.local/bin"
+
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
