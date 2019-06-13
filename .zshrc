@@ -4,12 +4,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/majackson/.oh-my-zsh"
 
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -77,6 +81,7 @@ plugins=(
   rake
   rbenv
   ruby
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -110,3 +115,9 @@ source $ZSH/oh-my-zsh.sh
 # this is for pycharm and other jetbrains IDEs that screw up the path with zsh
 [[ "$PATH" =~ /usr/local/bin ]] || export PATH=$PATH:/usr/local/bin
 source ~/.bash_profile
+
+# this is for the agnoster zsh theme
+export DEFAULT_USER=$(whoami)
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/unzip/bin:$PATH"
