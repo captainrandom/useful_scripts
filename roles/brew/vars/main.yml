@@ -17,6 +17,7 @@ applications:
   - gpatch
   - m4
   - make
+  - maven
   - nano
   - file-formula
   - git
@@ -25,9 +26,14 @@ applications:
   - perl518   # must run "brew tap homebrew/versions" first!
   - rsync
   - svn
+  - scala
+  - sbt
   - unzip
   - zsh
   - zsh-syntax-highlighting
+
+cask_applications:
+  - adoptopenjdk
 
 applications_with_default_names:
   - ed
