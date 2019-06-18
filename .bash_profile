@@ -12,6 +12,9 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export AIRFLOW_GPL_UNIDECODE=yes
 export AIRFLOW_HOME=~/airflow
 
+# add julia to the path
+export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/majackson/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
