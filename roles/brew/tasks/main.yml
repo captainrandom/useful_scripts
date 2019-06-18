@@ -1,0 +1,7 @@
+---
+
+- name: install homebrew
+  include: homebrew.yml
+
+- name: application installs
+  include: install_packages.yml

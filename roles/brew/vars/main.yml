@@ -1,0 +1,39 @@
+---
+
+# homebrew applications
+applications:
+  - coreutils
+  - gawk
+  - binutils
+  - diffutils
+  - gnutls
+  - gzip
+  - screen
+  - watch
+  - wget
+  - bash
+  - emacs
+  - gdb  # gdb requires further actions to make it work. See `brew info gdb`.
+  - gpatch
+  - m4
+  - make
+  - nano
+  - file-formula
+  - git
+  - less
+  - openssh
+  - perl518   # must run "brew tap homebrew/versions" first!
+  - rsync
+  - svn
+  - unzip
+  - zsh
+  - zsh-syntax-highlighting
+
+applications_with_default_names:
+  - ed
+  - gnu-indent
+  - gnu-sed
+  - gnu-tar
+  - gnu-which
+  - findutils
+  - grep
