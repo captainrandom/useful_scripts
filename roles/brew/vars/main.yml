@@ -12,9 +12,11 @@ applications:
   - watch
   - wget
   - bash
+  - elixir
   - emacs
   - gdb  # gdb requires further actions to make it work. See `brew info gdb`.
   - gpatch
+  - go
   - m4
   - make
   - maven
@@ -34,6 +36,7 @@ applications:
 
 cask_applications:
   - adoptopenjdk
+  - homebrew/cask-versions/adoptopenjdk8
 
 applications_with_default_names:
   - ed

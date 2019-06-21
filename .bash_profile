@@ -5,6 +5,9 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export PATH="$PATH:/Users/$(whoami)/.local/bin"
 
+# adding local bin
+export PATH=$PATH:${HOME}/.local/bin
+
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
@@ -12,8 +15,23 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export AIRFLOW_GPL_UNIDECODE=yes
 export AIRFLOW_HOME=~/airflow
 
+# GO Paths
+export GOPATH=$HOME/go
+# export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+# export PATH=$PATH:$GOROOT/bin
+
 # add julia to the path
 export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
+
+# Spark
+export SPARK_HOME=${HOME}/spark-2.4.3-bin-hadoop2.7
+export PATH=$PATH:${SPARK_HOME}/bin
+export PYSPARK_DRIVER_PYTHON=ipython
+
+# setting java version so 1.8 for spark and flink
+export DEFAULT_JAVA_VERSION=1.8
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -33,3 +51,6 @@ unset __conda_setup
 
 # added by Snowflake SnowSQL installer v1.0
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+alias java_home=/usr/libexec/java_home
+alias java_versions='/usr/libexec/java_home -V'
