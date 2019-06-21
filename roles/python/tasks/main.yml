@@ -1,0 +1,10 @@
+---
+
+- name: install anaconda
+  include_role:
+    name: andrewrothstein.anaconda
+
+- name: install python packages
+  pip:
+    name: "{item}"
+  with_items: "{{packages}}"

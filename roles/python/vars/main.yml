@@ -1,0 +1,6 @@
+---
+
+packages:
+  - awscli
+  - boto3
+  - ansible

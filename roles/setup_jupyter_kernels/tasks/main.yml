@@ -1,0 +1,17 @@
+---
+
+- git:
+  repo: 'https://github.com/pprzetacznik/IElixir.git'
+  dest: ~
+
+- name: get dependencies
+  command: ~/IElixir/mix deps.get
+
+- name: test
+  command: mix test --include skip
+
+- name: install rebar ?? not sure why
+  command: mix local.rebar --force
+
+- name: run install script
+  shell: ~/IElixir/install_script.sh
