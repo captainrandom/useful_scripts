@@ -1,4 +1,9 @@
 ---
+- name: add taps
+  homebrew_tap:
+    name: "{{item}}"
+  with_items: "{{taps}}"
+
 - name: install java
   homebrew_cask:
     name: "{{item}}"

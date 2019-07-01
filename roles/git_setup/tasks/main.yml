@@ -34,3 +34,8 @@
   name: alias.nuke
   scope: global
   value: '!sh -c "git branch -D $1 && git push origin :$1" -'
+
+- git_config
+  name: pager.branch
+  scope: global
+  value: false

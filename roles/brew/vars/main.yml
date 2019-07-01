@@ -26,6 +26,7 @@ applications:
   - less
   - openssh
   - perl518   # must run "brew tap homebrew/versions" first!
+  - p7zip
   - rsync
   - svn
   - scala
@@ -46,3 +47,6 @@ applications_with_default_names:
   - gnu-which
   - findutils
   - grep
+
+taps:
+  - homebrew/versions
