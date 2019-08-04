@@ -33,6 +33,8 @@ export PYSPARK_DRIVER_PYTHON=ipython
 export DEFAULT_JAVA_VERSION=1.8
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
+alias bfg="java -jar ~/.local/bin/bfg-1.13.0.jar"
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/majackson/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
