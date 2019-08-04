@@ -1,0 +1,9 @@
+---
+
+- name: Create the local bin dir
+  file:
+    path: "{{ dest_folder }}"
+    state: directory
+
+- name: download sources
+  get_url: url={{jar_url}} dest={{ dest_folder }}/{{ file_name }}
