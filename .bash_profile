@@ -35,6 +35,13 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
 
+# added by Snowflake SnowSQL installer v1.0
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+# java home and version choosing (probably for mac)
+alias java_home=/usr/libexec/java_home
+alias java_versions='/usr/libexec/java_home -V'
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/majackson/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -50,9 +57,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-# added by Snowflake SnowSQL installer v1.0
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
-alias java_home=/usr/libexec/java_home
-alias java_versions='/usr/libexec/java_home -V'

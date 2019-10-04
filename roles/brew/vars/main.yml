@@ -6,6 +6,7 @@ applications:
   - gawk
   - binutils
   - diffutils
+  - iterative/homebrew-dvc/dvc
   - gnutls
   - gnu-sed
   - gzip
