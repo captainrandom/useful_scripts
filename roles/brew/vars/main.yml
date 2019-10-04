@@ -6,7 +6,6 @@ applications:
   - gawk
   - binutils
   - diffutils
-  - iterative/homebrew-dvc/dvc
   - gnutls
   - gnu-sed
   - gzip
@@ -40,6 +39,7 @@ applications:
 cask_applications:
   - adoptopenjdk
   - homebrew/cask-versions/adoptopenjdk8
+  - iterative/homebrew-dvc/dvc
 
 applications_with_default_names:
   - ed
