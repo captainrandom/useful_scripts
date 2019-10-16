@@ -1,3 +1,3 @@
 install-linux:
-	ansible-galaxy install -r requirements.yml
+	ansible-galaxy install -r linux_requirements.yml
 	ansible-playbook setup_linux_env.yml
