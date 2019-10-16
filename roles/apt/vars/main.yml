@@ -1,3 +1,6 @@
 packages:
+  - libatlas3-base
   - scala
   - haskell-platform
+  - r-base-dev
+  - r-base
