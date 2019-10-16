@@ -1,5 +1,6 @@
 ---
 
+
 - git_config:
     name: alias.ci
     scope: global
@@ -35,7 +36,7 @@
     scope: global
     value: '!sh -c "git branch -D $1 && git push origin :$1" -'
 
-- git_config
+- git_config:
     name: pager.branch
     scope: global
     value: false
