@@ -1,0 +1,6 @@
+dependencies:
+  - src: andrewrothstein.r
+  - src: gantsign.oh-my-zsh
+  - src: lean_delivery.java
+  - src: gantsign.golang
+  - src: alexcoppe.swift
