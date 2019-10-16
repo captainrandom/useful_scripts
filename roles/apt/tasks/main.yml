@@ -1,0 +1,15 @@
+- name: install packages using apt
+  apt:
+    name: "{{item}}"
+    update_cache: yes
+    state: latest
+  with_items: "{{packages}}"
+
+
+- name: Remove useless packages from the cache
+  apt:
+    autoclean: yes
+
+- name: Remove dependencies that are no longer required
+  apt:
+    autoremove: yes

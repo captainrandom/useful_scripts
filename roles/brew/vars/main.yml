@@ -4,6 +4,8 @@
 applications:
   - coreutils
   - gawk
+  - ghc
+  - cabal-install
   - binutils
   - diffutils
   - gnutls

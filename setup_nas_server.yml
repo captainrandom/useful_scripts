@@ -1,0 +1,42 @@
+---
+- hosts: localhost
+  roles:
+    - {role: bfg, tags: bfgt}
+    - role: git_setup
+      tags: git
+    - role: apt
+      tags: apt
+    - role: andrewrothstein.r
+      tag: r
+    # this is not for mac (i think)
+    - role: gantsign.oh-my-zsh
+      tags: oh-my-zsh
+      users:
+        - username: mark
+          oh_my_zsh:
+          theme: agnoster
+          plugins:
+            - git
+            - mvn
+            - bundler
+            - sdotenv
+            - osx
+            - rake
+            - rbenv
+            - ruby
+            - zsh-autosuggestions
+            - zsh-syntax-highlighting
+    - role: lean_delivery.java
+      tags: java11
+      transport: repositories
+      java_major_version: 11
+    - role: lean_delivery.java
+      tags: java8
+      transport: repositories
+      java_major_version: 8
+    - role: gantsign.golang
+      tags: golang
+       golang_gopath: '$HOME/go'
+    - role: alexcoppe.swift
+      swift_install_directory: /opt/
+      tags: swift
