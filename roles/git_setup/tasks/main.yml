@@ -39,4 +39,4 @@
 - git_config:
     name: pager.branch
     scope: global
-    value: false
+    value: 'false'
