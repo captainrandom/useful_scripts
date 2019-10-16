@@ -1,41 +1,41 @@
 ---
 
 - git_config:
-  name: alias.ci
-  scope: global
-  value: commit
+    name: alias.ci
+    scope: global
+    value: commit
 
 - git_config:
-  name: alias.co
-  scope: global
-  value: checkout
+    name: alias.co
+    scope: global
+    value: checkout
 
 - git_config:
-  name: alias.br
-  scope: global
-  value: branch
+    name: alias.br
+    scope: global
+    value: branch
 
 - git_config:
-  name: alias.st
-  scope: global
-  value: status
+    name: alias.st
+    scope: global
+    value: status
 
 - git_config:
-  name: alias.lg
-  scope: global
-  value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    name: alias.lg
+    scope: global
+    value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 - git_config:
-  name: alias.lg
-  scope: global
-  value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+    name: alias.lg
+    scope: global
+    value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 - git_config:
-  name: alias.nuke
-  scope: global
-  value: '!sh -c "git branch -D $1 && git push origin :$1" -'
+    name: alias.nuke
+    scope: global
+    value: '!sh -c "git branch -D $1 && git push origin :$1" -'
 
 - git_config
-  name: pager.branch
-  scope: global
-  value: false
+    name: pager.branch
+    scope: global
+    value: false
