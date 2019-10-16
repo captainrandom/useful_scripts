@@ -1,11 +1,5 @@
 ---
 - hosts: localhost
-  dependencies:
-    - andrewrothstein.r
-    - gantsign.oh-my-zsh
-    - lean_delivery.java
-    - gantsign.golang
-    - alexcoppe.swift
   roles:
     - {role: bfg, tags: bfgt}
     - role: git_setup
