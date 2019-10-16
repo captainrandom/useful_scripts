@@ -1,5 +1,11 @@
 ---
 - hosts: localhost
+  dependencies:
+    - andrewrothstein.r
+    - gantsign.oh-my-zsh
+    - lean_delivery.java
+    - gantsign.golang
+    - alexcoppe.swift
   roles:
     - {role: bfg, tags: bfgt}
     - role: git_setup
@@ -36,7 +42,7 @@
       java_major_version: 8
     - role: gantsign.golang
       tags: golang
-       golang_gopath: '$HOME/go'
+      golang_gopath: '$HOME/go'
     - role: alexcoppe.swift
       swift_install_directory: /opt/
       tags: swift
