@@ -31,6 +31,7 @@ applications:
   - perl518   # must run "brew tap homebrew/versions" first!
   - p7zip
   - rsync
+  - nim
   - svn
   - scala
   - sbt

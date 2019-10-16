@@ -4,3 +4,4 @@ packages:
   - haskell-platform
   - r-base-dev
   - r-base
+  - nim
