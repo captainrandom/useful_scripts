@@ -3,6 +3,7 @@
     name: "{{packages}}"
     update_cache: yes
     state: latest
+  become: true
 
 
 - name: Remove useless packages from the cache
