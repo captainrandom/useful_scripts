@@ -1,9 +1,8 @@
 - name: install packages using apt
   apt:
-    name: "{{item}}"
+    name: "{{packages}}"
     update_cache: yes
     state: latest
-  with_items: "{{packages}}"
 
 
 - name: Remove useless packages from the cache
