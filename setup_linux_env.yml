@@ -6,8 +6,8 @@
       tags: git
     - role: apt
       tags: apt
-    - role: andrewrothstein.r
-      tag: r
+    # - role: andrewrothstein.r
+      # tag: r
     # this is not for mac (i think)
     - role: gantsign.oh-my-zsh
       tags: oh-my-zsh
