@@ -118,3 +118,9 @@ source ~/.bash_profile
 
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mark/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mark/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mark/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mark/google-cloud-sdk/completion.zsh.inc'; fi
