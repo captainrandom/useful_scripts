@@ -27,11 +27,6 @@
     value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 - git_config:
-    name: alias.lg
-    scope: global
-    value: "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-
-- git_config:
     name: alias.nuke
     scope: global
     value: '!sh -c "git branch -D $1 && git push origin :$1" -'

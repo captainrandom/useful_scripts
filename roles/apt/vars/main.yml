@@ -5,3 +5,4 @@ packages:
   - r-base-dev
   - r-base
   - nim
+  - git

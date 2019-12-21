@@ -1,0 +1,15 @@
+--
+
+- name: Run a command as nobody
+  command: apt update && apt install sudo
+  become: yes
+  become_method: su
+  become_user: root
+  ansible_become_password: {{root_password}}
+
+- name: add user to sudo group
+  command: adduser {{sudo_user}} sudo
+  become: yes
+  become_method: su
+  become_user: root
+  ansible_become_password: {{root_password}}

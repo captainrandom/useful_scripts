@@ -4,3 +4,4 @@ packages:
   - awscli
   - boto3
   - ansible
+  - docker-compose

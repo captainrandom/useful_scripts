@@ -1,11 +1,21 @@
 ---
 - hosts: localhost
   roles:
+    - role: sudo
+      tags: sudo
+      vars:
+        sudo_user: mark
     - {role: bfg, tags: bfgt}
-    - role: git_setup
-      tags: git
+    - role: geerlingguy.docker
+      tags: docker
+      vars:
+        docker_install_compose: false
+        docker_apt_ignore_key_error: false
+        docker_users: ['mark']
     - role: apt
       tags: apt
+    - role: git_setup
+      tags: git
     # - role: andrewrothstein.r
       # tag: r
     # this is not for mac (i think)
