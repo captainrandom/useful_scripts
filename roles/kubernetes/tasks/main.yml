@@ -1,0 +1,31 @@
+---
+
+# keep in mind that this installs kubernetes on debian
+
+- name: add repo key
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  become: true
+
+- name: add source repo
+  command: echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+  become: true
+
+- name: install kubernetes
+  apt:
+    name: "{{packages}}"
+    update_cache: yes
+    state: latest
+  become: true
+
+- name: hold package versions
+  command: apt-mark hold {{ item }}
+  with_items: "{{ packages }}"
+  become: true
+
+- name: load and restart the kubelet service
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: kubelet
+  become: true

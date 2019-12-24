@@ -6,6 +6,7 @@
       tags: apt
     - role: git_setup
       tags: git
+    - role: kubernetes
     - role: ansible-role-oh-my-zsh  # gantsign.oh-my-zsh
       tags: oh-my-zsh
       users:
