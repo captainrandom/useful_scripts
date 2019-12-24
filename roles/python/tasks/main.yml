@@ -2,9 +2,12 @@
 
 - name: install anaconda
   include_role:
-    name: andrewrothstein.anaconda
+    name: ansible-anaconda  # andrewrothstein.anaconda
+  # vars:
+    # anaconda_install_packages: "{{conda_packages}}"
 
 - name: install python packages
-  pip:
-    name: "{item}"
+  shell: export PATH="/usr/local/anaconda/bin:$PATH" && source activate base && pip install {{item}}
+  args:
+    executable: /bin/bash
   with_items: "{{packages}}"

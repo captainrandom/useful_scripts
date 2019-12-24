@@ -6,3 +6,10 @@ packages:
   - r-base
   - nim
   - git
+  - htop
+  - tmux
+  - wget
+  - make
+  - less
+  - rsync
+  - vim

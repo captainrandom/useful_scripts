@@ -1,0 +1,9 @@
+# adding local bin
+export PATH=$PATH:${HOME}/.local/bin
+
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+
+alias bfg="java -jar ~/.local/bin/bfg-latest.jar"

@@ -1,15 +1,21 @@
---
+---
 
-- name: Run a command as nobody
-  command: apt update && apt install sudo
+- name: test su
+  local_action: command whoami
+  register: username_on_the_host
   become: yes
-  become_method: su
   become_user: root
-  ansible_become_password: {{root_password}}
+  become_method: su
 
-- name: add user to sudo group
+- debug: var=username_on_the_host
+
+- name: Install sudo as root
+  command: apt update && apt install sudo -y
+  become: yes
+  become_user: root
+  become_method: su
+
+- name: Add user to sudo group
   command: adduser {{sudo_user}} sudo
   become: yes
   become_method: su
-  become_user: root
-  ansible_become_password: {{root_password}}

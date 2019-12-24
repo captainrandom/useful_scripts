@@ -1,7 +1,7 @@
 ---
 
+# conda_packages:
+
 packages:
-  - awscli
   - boto3
-  - ansible
-  - docker-compose
+  - awscli

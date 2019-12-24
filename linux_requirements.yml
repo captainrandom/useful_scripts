@@ -1,4 +1,12 @@
-- src: gantsign.oh-my-zsh
-- src: lean_delivery.java
-- src: gantsign.golang
-- src: alexcoppe.swift
+- src: git+https://github.com/gantsign/ansible-role-oh-my-zsh.git
+- src: git+https://github.com/lean-delivery/ansible-role-java.git
+- src: git@github.com:captainrandom/ansible-role-golang.git
+  scm: git
+- src: git@github.com:captainrandom/ansible-role-swift.git
+  scm: git
+- src: git+https://github.com/geerlingguy/ansible-role-docker.git
+- name: andrewrothstein.unarchive-deps
+  src: git+https://github.com/andrewrothstein/ansible-unarchive-deps.git
+  version: v1.1.2
+- src: git@github.com:captainrandom/ansible-anaconda.git
+  scm: git

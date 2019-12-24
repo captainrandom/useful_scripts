@@ -1,26 +1,12 @@
 ---
-- hosts: localhost
+- hosts: my_servers
   roles:
-    - role: sudo
-      tags: sudo
-      vars:
-        sudo_user: mark
     - {role: bfg, tags: bfgt}
-    - role: geerlingguy.docker
-      tags: docker
-      vars:
-        docker_install_compose: false
-        docker_apt_ignore_key_error: false
-        docker_users: ['mark']
     - role: apt
       tags: apt
-    - role: python
     - role: git_setup
       tags: git
-    # - role: andrewrothstein.r
-      # tag: r
-    # this is not for mac (i think)
-    - role: gantsign.oh-my-zsh
+    - role: ansible-role-oh-my-zsh  # gantsign.oh-my-zsh
       tags: oh-my-zsh
       users:
         - username: mark
@@ -37,17 +23,28 @@
             - ruby
             - zsh-autosuggestions
             - zsh-syntax-highlighting
-    - role: lean_delivery.java
-      tags: java11
-      transport: repositories
-      java_major_version: 11
-    - role: lean_delivery.java
-      tags: java8
-      transport: repositories
-      java_major_version: 8
-    - role: gantsign.golang
+    # - role: ansible-role-java  # lean_delivery.java
+    #   tags: java11
+    #   transport: repositories
+    #   java_major_version: 11
+    # - role: ansible-role-java  # lean_delivery.java
+    #   tags: java8
+    #   transport: repositories
+    #   java_major_version: 8
+    
+    - role: ansible-role-golang  # gantsign.golang
       tags: golang
       golang_gopath: '$HOME/go'
-    - role: alexcoppe.swift
+      become: true
+    - role: ansible-role-swift  # alexcoppe.swift
       swift_install_directory: /opt/
       tags: swift
+      become: true
+    - role: python
+    - role: ansible-role-docker  # geerlingguy.docker
+      tags: docker
+      become: true
+      vars:
+        docker_install_compose: false
+        docker_apt_ignore_key_error: false
+        docker_users: ['mark']
