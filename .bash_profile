@@ -24,6 +24,9 @@ export PATH=$PATH:$GOPATH/bin
 # add julia to the path
 export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
 
+# Swift
+export TOOLCHAINS=swift
+
 # Spark
 export SPARK_HOME=${HOME}/spark-2.4.3-bin-hadoop2.7
 export PATH=$PATH:${SPARK_HOME}/bin
@@ -57,3 +60,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+function urlencode() {
+    python -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.argv[1]))" ${1}
+}
