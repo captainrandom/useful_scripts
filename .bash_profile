@@ -1,3 +1,7 @@
+# utf bindings
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # brew path
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/unzip/bin:$PATH"
@@ -33,8 +37,8 @@ export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
 # setting java version so 1.8 for spark and flink
-export DEFAULT_JAVA_VERSION=1.8
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export DEFAULT_JAVA_VERSION=1.8 # 12.0.1
+export JAVA_HOME=$(/usr/libexec/java_home -v ${DEFAULT_JAVA_VERSION})
 
 alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
 
@@ -45,21 +49,16 @@ export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 alias java_home=/usr/libexec/java_home
 alias java_versions='/usr/libexec/java_home -V'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/majackson/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/majackson/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/majackson/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/majackson/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# AWS 2.0 CLI
+export AWS_PAGER=""
 
 function urlencode() {
     python -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.argv[1]))" ${1}
+}
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# kubernetes commands
+kubedash() {
+    kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
 }

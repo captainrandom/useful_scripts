@@ -8,8 +8,10 @@ packages:
   - git
   - htop
   - tmux
+  - curl
   - wget
   - make
   - less
   - rsync
   - vim
+  - ssh-import-id

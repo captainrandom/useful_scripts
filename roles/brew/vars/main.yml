@@ -2,6 +2,7 @@
 
 # homebrew applications
 applications:
+  - avro-tools
   - coreutils
   - gawk
   - ghc
