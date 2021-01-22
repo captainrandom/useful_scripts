@@ -7,4 +7,4 @@ private_key=$1
 encrypted_message=$2
 decrypted_message=$3
 
-openssl rsautl -decrypt -inkey "${private_key}" -in "${encrypted_message}" -out "${decrypted_messaage}"
+openssl rsautl -decrypt -inkey "${private_key}" -in "${encrypted_message}" -out "${decrypted_message}"
