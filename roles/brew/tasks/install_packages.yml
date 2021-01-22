@@ -1,8 +1,8 @@
 ---
-- name: add taps
-  homebrew_tap:
-    name: "{{item}}"
-  with_items: "{{taps}}"
+# - name: add taps
+#   homebrew_tap:
+#     name: "{{item}}"
+#   with_items: "{{taps}}"
 
 - name: install cask applications
   homebrew_cask:
@@ -12,31 +12,5 @@
 
 - name: start installing homebrew applications
   homebrew:
-    name: "{{item}}"
+    name: "{{applications}}"
     state: latest
-  with_items: "{{applications}}"
-
-- name: install homebrew packages with options
-  homebrew:
-    name: "{{item}}"
-    state: latest
-    install_options: with-default-names
-  with_items: "{{applications_with_default_names}}"
-
-- name: install vim
-  homebrew:
-    name: vim
-    state: latest
-    install_options: override-system-vi
-
-- name: install macvim
-  homebrew:
-    name: macvim
-    state: latest
-    install_options: override-system-vi,custom-system-icons
-
-- name: install wdiff
-  homebrew:
-    name: wdiff
-    state: latest
-    install_options: with-gettext

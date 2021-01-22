@@ -1,0 +1,11 @@
+---
+
+- name: Check if cargo is already installed for local user
+  stat:
+    path: ~/.cargo/bin/cargo
+  register: cargo_check
+
+- name: install cargo
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  when:
+   - not cargo_check.stat.exists

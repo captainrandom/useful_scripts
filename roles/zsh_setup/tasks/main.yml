@@ -1,32 +1,32 @@
 ---
-# install fonts
-
-- git:
-  repo: 'https://github.com/powerline/fonts.git'
-  dest: ~
+- name: clone powerline fonts
+  git:
+    repo: 'https://github.com/powerline/fonts.git'
+    dest: '{{ansible_env.HOME}}/fonts'
 
 - name: install fonts
-  command: find ~/fonts | grep "\.ttf\|otf$" | xargs -I {} cp {} /Library/Fonts
+  shell: find {{ansible_env.HOME}}/fonts | grep "\.ttf\|otf$" | xargs -I {} cp {} /Library/Fonts
 
 - name: cleanup fonts
-  command: rm -rf fonts
+  command: rm -rf {{ansible_env.HOME}}/fonts
 
 # install auto suggestions script
-  - git:
+- name: clone zsh-autosuggestions repo
+  git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions'
-    dest: ~
+    dest: '{{ansible_env.HOME}}/zsh-autosuggestions'
 
 - name: install autosuggestion script
   copy:
-    src: ~/zsh-autosuggestions
-    dest: ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    src: '{{ansible_env.HOME}}/zsh-autosuggestions'
+    dest: '{{ansible_env.HOME}}/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
 
 - name: cleanup autosuggestion script
   file:
     state: absent
-    path: ~/zsh-autosuggestions
+    path: '{{ansible_env.HOME}}/zsh-autosuggestions'
 
-# just download the color schemes for iTerm2
-- git:
-  repo: 'https://github.com/mbadolato/iTerm2-Color-Schemes.git'
-  dest: ~
+- name: download the color schemes for iTerm2
+  git:
+    repo: 'https://github.com/mbadolato/iTerm2-Color-Schemes.git'
+    dest: '{{ansible_env.HOME}}/iTerm2-Color-Schemes'

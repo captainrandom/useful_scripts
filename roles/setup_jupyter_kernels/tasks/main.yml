@@ -1,8 +1,9 @@
 ---
 
-- git:
-  repo: 'https://github.com/pprzetacznik/IElixir.git'
-  dest: ~
+- name: Clone Elixir kernel repo
+  git:
+    repo: 'https://github.com/pprzetacznik/IElixir.git'
+    dest: ~
 
 - name: get dependencies
   command: ~/IElixir/mix deps.get

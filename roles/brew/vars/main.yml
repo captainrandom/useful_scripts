@@ -13,6 +13,8 @@ applications:
   - gnu-sed
   - gzip
   - screen
+  - tmux
+  - htop
   - watch
   - wget
   - bash
@@ -39,13 +41,6 @@ applications:
   - unzip
   - zsh
   - zsh-syntax-highlighting
-
-cask_applications:
-  - adoptopenjdk
-  - homebrew/cask-versions/adoptopenjdk8
-  - iterative/homebrew-dvc/dvc
-
-applications_with_default_names:
   - ed
   - gnu-indent
   - gnu-sed
@@ -53,6 +48,11 @@ applications_with_default_names:
   - gnu-which
   - findutils
   - grep
+  - vim
 
-taps:
-  - homebrew/versions
+cask_applications:
+  - adoptopenjdk
+  - homebrew/cask-versions/adoptopenjdk8
+
+# taps:
+  # - homebrew/versions
