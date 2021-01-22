@@ -11,7 +11,8 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME=""
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -19,6 +20,7 @@ ZSH_THEME="agnoster"
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -114,7 +116,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # this is for pycharm and other jetbrains IDEs that screw up the path with zsh
 [[ "$PATH" =~ /usr/local/bin ]] || export PATH=$PATH:/usr/local/bin
-source ~/.bash_profile
 
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)

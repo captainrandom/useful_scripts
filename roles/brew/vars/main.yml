@@ -47,6 +47,7 @@ applications:
   - gnu-tar
   - gnu-which
   - findutils
+  - node
   - grep
   - vim
 
