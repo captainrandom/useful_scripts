@@ -9,6 +9,12 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export PATH="$PATH:/Users/$(whoami)/.local/bin"
 
+# node 12 (brew installation)
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@12/lib"
+export CPPFLAGS="-I/usr/local/opt/node@12/include"
+
+
 # adding local bin
 export PATH=$PATH:${HOME}/.local/bin
 
@@ -32,13 +38,21 @@ export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
 export TOOLCHAINS=swift
 
 # Spark
-export SPARK_HOME=${HOME}/spark-2.4.3-bin-hadoop2.7
+export SPARK_HOME=${HOME}/spark-3.0.1-bin-hadoop3.2
+#export SPARK_HOME=${HOME}/spark-2.4.4-bin-hadoop2.7
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
+# only necessary for spark 3.0.0 for now
+# export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.9-src.zip:$PYTHONPATH
+
 # setting java version so 1.8 for spark and flink
-export DEFAULT_JAVA_VERSION=1.8 # 12.0.1
+#export DEFAULT_JAVA_VERSION=1.8
+export DEFAULT_JAVA_VERSION=11.0.2
 export JAVA_HOME=$(/usr/libexec/java_home -v ${DEFAULT_JAVA_VERSION})
+update_java_version() {
+    export JAVA_HOME=$(/usr/libexec/java_home -v "${1}")
+}
 
 alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
 

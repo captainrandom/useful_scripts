@@ -1,0 +1,22 @@
+---
+- name: check if spark home exists
+  stat:
+    path: '{{ansible_env.HOME}}/spark-{{spark_version}}-bin-hadoop{{hadoop_version}}'
+  register: spark_home_exists
+- block:
+  - name: Download spark tar file
+    get_url:
+      url: 'https://mirrors.ocf.berkeley.edu/apache/spark/spark-{{spark_version}}/spark-{{spark_version}}-bin-hadoop{{hadoop_version}}.tgz'
+      dest: '/tmp/spark-{{spark_version}}-bin-hadoop{{hadoop_version}}.tgz'
+
+  - name: Extract Apache Spark
+    ansible.builtin.unarchive:
+      src: '/tmp/spark-{{spark_version}}-bin-hadoop{{hadoop_version}}.tgz'
+      dest: '{{ansible_env.HOME}}'
+
+  - name: Cleanup Downloads
+    ansible.builtin.file:
+      path: '/tmp/spark-{{spark_version}}-bin-hadoop{{hadoop_version}}.tgz'
+      state: absent
+  when:
+    - not spark_home_exists.stat.exists
