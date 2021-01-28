@@ -50,6 +50,7 @@ applications:
   - node
   - grep
   - vim
+  - jq
 
 cask_applications:
   - adoptopenjdk

@@ -70,7 +70,7 @@ function urlencode() {
     python -c "import sys, urllib.parse; print(urllib.parse.quote_plus(sys.argv[1]))" ${1}
 }
 
-export PATH="$HOME/.cargo/bin:$PATH"
+source "$HOME/.cargo/env"
 
 # kubernetes commands
 kubedash() {

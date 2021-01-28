@@ -13,6 +13,11 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 ZSH_THEME=""
+
+# Using pure instead: https://github.com/sindresorhus/pure#getting-started
+autoload -U promptinit; promptinit
+prompt pure
+
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -117,6 +122,8 @@ export MANPATH="/usr/local/man:$MANPATH"
 # this is for pycharm and other jetbrains IDEs that screw up the path with zsh
 [[ "$PATH" =~ /usr/local/bin ]] || export PATH=$PATH:/usr/local/bin
 
+source ~/.bash_starz
+
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)
 
@@ -125,3 +132,19 @@ if [ -f '/Users/mark/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mark/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mark/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mark/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/majackson/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/majackson/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/majackson/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/majackson/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
