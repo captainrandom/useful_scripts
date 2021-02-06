@@ -1,6 +1,7 @@
 ---
 - hosts: localhost
   roles:
+    - scripts
     - role: spark
       spark_version: 3.0.1
     - bfg

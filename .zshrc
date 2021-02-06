@@ -148,3 +148,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+# added by Snowflake SnowCD installer
+export PATH=/opt/snowflake/snowcd:$PATH
+source ~/.zshprofile
