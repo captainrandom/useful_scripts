@@ -51,6 +51,7 @@ applications:
   - grep
   - vim
   - jq
+  - helm
 
 cask_applications:
   - adoptopenjdk

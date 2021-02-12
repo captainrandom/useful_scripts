@@ -154,4 +154,3 @@ export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
 
 # added by Snowflake SnowCD installer
 export PATH=/opt/snowflake/snowcd:$PATH
-source ~/.zshprofile
