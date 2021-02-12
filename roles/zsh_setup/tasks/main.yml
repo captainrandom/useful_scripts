@@ -70,17 +70,17 @@
     dest: '{{ansible_env.HOME}}/.zshrc'
     state: hard
 
-- name: Check if ~/.zshprofile already exists
+- name: Check if ~/.zprofile already exists
   stat:
-    path: '{{ansible_env.HOME}}/.zshprofile'
-  register: zshprofile_check
+    path: '{{ansible_env.HOME}}/.zprofile'
+  register: zprofile_check
 
-- name: Move ~/.zshprofile to ~/.zshprofile.old
-  command: 'mv {{ansible_env.HOME}}/.zshprofile {{ansible_env.HOME}}/.zshprofile.old'
-  when: zshprofile_check.stat.exists
+- name: Move ~/.zprofile to ~/.zprofile.old
+  command: 'mv {{ansible_env.HOME}}/.zprofile {{ansible_env.HOME}}/.zprofile.old'
+  when: zprofile_check.stat.exists
 
-- name: Create hard for .zshprofile
+- name: Create hard for .zprofile
   ansible.builtin.file:
-    src: '{{ansible_env.HOME}}/useful_scripts/.zshprofile'
-    dest: '{{ansible_env.HOME}}/.zshprofile'
+    src: '{{ansible_env.HOME}}/useful_scripts/.zprofile'
+    dest: '{{ansible_env.HOME}}/.zprofile'
     state: hard

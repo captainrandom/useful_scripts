@@ -52,6 +52,7 @@ applications:
   - vim
   - jq
   - helm
+  - parquet-tools
 
 cask_applications:
   - adoptopenjdk
