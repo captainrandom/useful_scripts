@@ -1,10 +1,14 @@
 ---
+- name: Create Local Bin Directory
+  file:
+    path: '{{ansible_env.HOME}}/.local/bin'
+    state: directory
+
 - name: Download imgcat
   get_url:
     url: https://iterm2.com/utilities/imgcat
     dest: '{{ansible_env.HOME}}/.local/bin/imgcat'
-    mode: '0755'
-    
+    mode: '0755'    
 
 - name: Download codebuild local
   get_url:
