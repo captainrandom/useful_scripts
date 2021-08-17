@@ -13,3 +13,4 @@ This uses ansible to automatically setup the local host. This mostly sets up the
 #### TODO
 - Next thing to automate should be to see if I can automatically download / install mac apps
 - Test the anaconda install script, as I manually installed it this time around
+- Add script to setup loopback ssh connection
