@@ -127,12 +127,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/mark/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mark/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/mark/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mark/google-cloud-sdk/completion.zsh.inc'; fi
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 conda_path="/Users/${DEFAULT_USER}/anaconda3/bin/conda"
@@ -148,10 +142,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-
-# added by Snowflake SnowSQL installer v1.2
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
-# added by Snowflake SnowCD installer
-export PATH=/opt/snowflake/snowcd:$PATH

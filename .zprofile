@@ -50,9 +50,6 @@ export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3.2
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
-# only necessary for spark 3.0.0 for now
-# export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.9-src.zip:$PYTHONPATH
-
 # setting java version so 1.8 for spark and flink
 #export DEFAULT_JAVA_VERSION=1.8
 export DEFAULT_JAVA_VERSION=16.0.1
@@ -74,23 +71,6 @@ function download_dot_net() {
 	mkdir -p "$DOTNET_ROOT" && tar zxf "$DOTNET_FILE" -C "$DOTNET_ROOT"
 }
 
-# aws-cdk aliases
-## runs an npm script via lerna for a the current module
-alias lr='lerna run --stream --scope $(node -p "require(\"./package.json\").name")'
-
-## runs "yarn build" (build + test) for the current module
-alias lb='lr build'
-alias lt='lr test'
-
-## runs "yarn watch" for the current module (recommended to run in a separate terminal session):
-alias lw='lr watch'
-
-
-alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
-
-# added by Snowflake SnowSQL installer v1.0
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
 # AWS 2.0 CLI
 export AWS_PAGER=""
 
@@ -107,3 +87,17 @@ kubedash() {
 
 # Aliases
 alias projdir="cd ~/Documents/projects"
+
+# aws-cdk aliases
+## runs an npm script via lerna for a the current module
+alias lr='lerna run --stream --scope $(node -p "require(\"./package.json\").name")'
+
+## runs "yarn build" (build + test) for the current module
+alias lb='lr build'
+alias lt='lr test'
+
+## runs "yarn watch" for the current module (recommended to run in a separate terminal session):
+alias lw='lr watch'
+
+
+alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
