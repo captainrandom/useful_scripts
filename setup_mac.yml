@@ -4,6 +4,7 @@
     - scripts
     - bfg
     - aws
+    - mac_apps
     - brew
     - cargo
     # - setup_jupyter_kernels

@@ -1,0 +1,6 @@
+---
+# these come from https://macapps.link/en/
+# this is completely untested at this point!
+- name: Install Mac Apps
+  shell: curl -s 'https://api.macapps.link/en/{{app_name}}' | sh
+  with_items: "{{app_name}}"
