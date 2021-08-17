@@ -46,6 +46,7 @@ applications:
   - gnu-sed
   - gnu-tar
   - gnu-which
+  - gpg
   - findutils
   - node
   - grep
