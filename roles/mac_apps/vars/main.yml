@@ -1,7 +1,6 @@
 ---
 # mac app names
 app_name:
- - alfred
  - atom
  - chrome
  - docker
