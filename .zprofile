@@ -16,10 +16,10 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/mysql-client/include"
 export PKG_CONFIG_PATH="/usr/local/opt/mysql-client/lib/pkgconfig"
 
 
-# node 12 (brew installation)
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@12/lib"
-export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@12/include"
+# node 16 (brew installation)
+export PATH="/usr/local/opt/node@16/bin:$PATH"
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@16/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
 
 
 # adding local bin
@@ -45,8 +45,8 @@ export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
 export TOOLCHAINS=swift
 
 # Spark
-export SPARK_HOME=${HOME}/spark-3.0.1-bin-hadoop3.2
-#export SPARK_HOME=${HOME}/spark-2.4.4-bin-hadoop2.7
+export SPARK_VERSION=3.1.2
+export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3.2
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
@@ -55,7 +55,7 @@ export PYSPARK_DRIVER_PYTHON=ipython
 
 # setting java version so 1.8 for spark and flink
 #export DEFAULT_JAVA_VERSION=1.8
-export DEFAULT_JAVA_VERSION=15.0.1
+export DEFAULT_JAVA_VERSION=16.0.1
 export JAVA_HOME=$(/usr/libexec/java_home -v ${DEFAULT_JAVA_VERSION})
 update_java_version() {
     export JAVA_HOME=$(/usr/libexec/java_home -v "${1}")
@@ -104,3 +104,6 @@ source "$HOME/.cargo/env"
 kubedash() {
     kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
 }
+
+# Aliases
+alias projdir="cd ~/Documents/projects"
