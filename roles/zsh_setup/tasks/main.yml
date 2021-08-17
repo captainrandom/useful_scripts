@@ -1,15 +1,25 @@
 ---
+###########################################################################
+## Install Fonts
+###########################################################################
 - name: clone powerline fonts
   git:
     repo: 'https://github.com/powerline/fonts.git'
     dest: '{{ansible_env.HOME}}/Documents/iterm_settings/fonts'
 
-- name: install fonts
-  shell: find {{ansible_env.HOME}}/Documents/iterm_settings/fonts | grep "\.ttf\|otf$" | xargs -I {} cp {} /Library/Fonts
+- name: install powerline fonts
+  command: '{{ansible_env.HOME}}/Documents/iterm_settings/fonts/install.sh'
+  args:
+    chdir: '{{ansible_env.HOME}}/Documents/iterm_settings/fonts'
 
-- name: cleanup fonts
-  command: rm -rf {{ansible_env.HOME}}/Documents/iterm_settings/fonts
+- name: download range mono font
+  get_url:
+    url: https://github.com/leafo/moonscript-javascript/raw/master/fonts/range-mono-medium-webfont.ttf
+    dest: /Library/Fonts/range-mono-medium-webfont.ttf
 
+###########################################################################
+## Download Color Schemes
+###########################################################################
 - name: download the color schemes for iTerm2
   git:
     repo: 'https://github.com/mbadolato/iTerm2-Color-Schemes.git'
@@ -20,11 +30,19 @@
     repo: 'https://github.com/MartinSeeler/iterm2-material-design.git'
     dest: '{{ansible_env.HOME}}/Documents/iterm_settings/iterm2-material-design'
 
-- name: download range mono font
-  get_url:
-    url: https://github.com/leafo/moonscript-javascript/raw/master/fonts/range-mono-medium-webfont.ttf
-    dest: /Library/Fonts/range-mono-medium-webfont.ttf
+- name: Create cobalt2 color scheme directory
+  file:
+    path: '{{ansible_env.HOME}}/Documents/iterm_settings/Cobalt2-iterm'
+    state: directory
 
+- name: download cobalt2 color scheme for iTerm2
+  get_url:
+    url: https://raw.githubusercontent.com/wesbos/Cobalt2-iterm/master/cobalt2.itermcolors
+    dest: '{{ansible_env.HOME}}/Documents/iterm_settings/Cobalt2-iterm/cobalt2.itermcolors'
+
+###########################################################################
+## Install oh-my-zsh
+###########################################################################
 - name: Check if oh-my-zsh is already installed
   stat:
     path: '{{ansible_env.HOME}}/.oh-my-zsh'
@@ -51,6 +69,10 @@
     name: pure-prompt
     global: yes
 
+- name: download cobalt2 oh-my-zsh theme
+  get_url:
+    url: https://raw.githubusercontent.com/wesbos/Cobalt2-iterm/master/cobalt2.zsh-theme
+    dest: '{{ansible_env.HOME}}/.oh-my-zsh/themes/cobalt2.zsh-theme'
 
 ###########################################################################
 ## Linking any profile and rc files

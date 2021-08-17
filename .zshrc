@@ -12,7 +12,7 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
-ZSH_THEME=""
+ZSH_THEME="cobalt2"
 
 # Using pure instead: https://github.com/sindresorhus/pure#getting-started
 autoload -U promptinit; promptinit
@@ -134,14 +134,15 @@ if [ -f '/Users/mark/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mark
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/$(whoami)/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+conda_path="/Users/${DEFAULT_USER}/anaconda3/bin/conda"
+__conda_setup="$(${conda_path} 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/$(whoami)/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/$(whoami)/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/$(whoami)/anaconda3/bin:$PATH"
+        export PATH="/Users/${DEFAULT_USER}/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
