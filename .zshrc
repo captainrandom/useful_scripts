@@ -15,8 +15,8 @@ export ZSH="/Users/$(whoami)/.oh-my-zsh"
 ZSH_THEME="cobalt2"
 
 # Using pure instead: https://github.com/sindresorhus/pure#getting-started
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure
 
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -47,7 +47,8 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
+alias ls="ls --color=auto"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
