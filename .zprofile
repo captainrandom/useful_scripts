@@ -8,6 +8,7 @@ export PATH="/usr/local/opt/unzip/bin:$PATH"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 export PATH="$PATH:/Users/$(whoami)/.local/bin"
+export PATH="/usr/local/sbin:$PATH"
 
 # mysql-client
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
