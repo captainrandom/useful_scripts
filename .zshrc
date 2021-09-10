@@ -127,6 +127,12 @@ export MANPATH="/usr/local/man:$MANPATH"
 # this is for the agnoster zsh theme
 export DEFAULT_USER=$(whoami)
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${DEFAULT_USER}/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc"; fi
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 conda_path="/Users/${DEFAULT_USER}/anaconda3/bin/conda"
@@ -142,3 +148,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
