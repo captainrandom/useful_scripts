@@ -55,6 +55,7 @@ applications:
   - helm
   - parquet-tools
   - postgresql
+  - gh
 
 cask_applications:
   - adoptopenjdk
