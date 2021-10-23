@@ -60,6 +60,7 @@ applications:
 cask_applications:
   - adoptopenjdk
   - homebrew/cask-versions/adoptopenjdk8
+  - teamookla/speedtest/speedtest
 
 # taps:
   # - homebrew/versions
