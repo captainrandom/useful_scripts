@@ -22,6 +22,8 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@16/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
 
+# flutter
+export PATH="$PATH:${HOME}/flutter/bin"
 
 # adding local bin
 export PATH=$PATH:${HOME}/.local/bin
@@ -87,7 +89,7 @@ kubedash() {
 }
 
 # Aliases
-alias projdir="cd ~/Documents/projects"
+alias cdproj="cd ~/Documents/projects"
 
 # aws-cdk aliases
 ## runs an npm script via lerna for a the current module
