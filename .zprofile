@@ -104,3 +104,7 @@ alias lw='lr watch'
 
 
 alias bfg="java -jar ~/.local/bin/bfg-latest.jar"
+
+# posgres
+alias pg_start="launchctl load ~/Library/LaunchAgents"
+alias pg_stop="launchctl unload ~/Library/LaunchAgents"
