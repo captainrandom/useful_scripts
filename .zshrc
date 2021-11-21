@@ -93,13 +93,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# setting ls color (this needs to be after oh-my-zsh, because it overrides the color option!!)
-alias ls="ls --color=tty"
-
-# User configuration
-
-export MANPATH="/usr/local/man:$MANPATH"
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -121,6 +114,16 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# setting up z command
+. /usr/local/etc/profile.d/z.sh
+
+# setting ls color (this needs to be after oh-my-zsh, because it overrides the color option!!)
+alias ls="ls --color=tty"
+
+# User configuration
+
+export MANPATH="/usr/local/man:$MANPATH"
 
 # this is for pycharm and other jetbrains IDEs that screw up the path with zsh
 [[ "$PATH" =~ /usr/local/bin ]] || export PATH=$PATH:/usr/local/bin
@@ -154,5 +157,4 @@ unset __conda_setup
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
-
 export PATH="$WASMTIME_HOME/bin:$PATH"
