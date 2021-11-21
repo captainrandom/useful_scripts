@@ -2,6 +2,19 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# GNU
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
+# MANPATH
+export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman:MANPATH"
+export MANPATH="$(brew --prefix)/opt/findutils/libexec/gnuman:MANPATH"
+export MANPATH="$(brew --prefix)/opt/gnu-tar/libexec/gnuman:MANPATH"
+export MANPATH="$(brew --prefix)/opt/gnu-sed/libexec/gnuman:MANPATH"
+export MANPATH="$(brew --prefix)/opt/gnu-indent/libexec/gnuman:$MANPATH"
+
 # brew path
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/unzip/bin:$PATH"

@@ -47,8 +47,7 @@ ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
-DISABLE_LS_COLORS="true"
-alias ls="ls --color=auto"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -93,6 +92,9 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# setting ls color (this needs to be after oh-my-zsh, because it overrides the color option!!)
+alias ls="ls --color=tty"
 
 # User configuration
 
