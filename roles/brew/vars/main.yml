@@ -56,11 +56,9 @@ applications:
   - parquet-tools
   - postgresql
   - gh
+  - java
+  - speedtest
+  - z
 
-cask_applications:
-  - adoptopenjdk
-  - homebrew/cask-versions/adoptopenjdk8
-  - teamookla/speedtest/speedtest
-
-# taps:
-  # - homebrew/versions
+taps:
+  - teamookla/speedtest

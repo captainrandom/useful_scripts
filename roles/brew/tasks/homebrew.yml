@@ -8,8 +8,3 @@
   script: install_homebrew.sh
   when:
     - not homebrew_check.stat.exists
-
-- name: ensure homebrew is updated
-  homebrew:
-    state: latest
-    update_homebrew: yes
