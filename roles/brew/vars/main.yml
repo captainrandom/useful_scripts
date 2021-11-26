@@ -56,9 +56,10 @@ applications:
   - parquet-tools
   - postgresql
   - gh
-  - java
+  - adoptopenjdk
   - speedtest
   - z
 
 taps:
   - teamookla/speedtest
+  - AdoptOpenJDK/openjdk
