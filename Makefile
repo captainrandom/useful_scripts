@@ -10,7 +10,7 @@
 install-anaconda:
 	./install_anaconda.sh
 
-install-requirements: install-anaconda
+install-requirements:
 	pip install ansible
 	ansible-galaxy collection install community.general
 

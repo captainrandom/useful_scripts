@@ -1,0 +1,16 @@
+---
+
+- name: download shift-it
+  get_url:
+    url: 'https://github.com/fikovnik/ShiftIt/releases/download/version-{{version}}/ShiftIt-{{version}}.zip'
+    dest: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{version}}.zip'
+
+- name: unzip shift-it
+  ansible.builtin.unarchive:
+    src: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{version}}.zip'
+    dest: /Applications/
+
+- name: cleanup shiftit download
+  file:
+    state: absent
+    path: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{version}}.zip'
