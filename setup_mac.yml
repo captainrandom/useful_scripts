@@ -7,7 +7,6 @@
     - role: 'brew'
       tags: 'brew'
     - cargo
-    - node
     # - setup_jupyter_kernels
     - role: 'zsh_setup'
       tags: 'zsh_setup'
@@ -18,3 +17,5 @@
       tags: 'shiftit'
     - role: 'atom'
       tags: 'atom'
+    - role: node
+      tags: 'node'
