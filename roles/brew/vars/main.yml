@@ -59,7 +59,9 @@ applications:
   - adoptopenjdk
   - speedtest
   - z
+  - ethereum
 
 taps:
   - teamookla/speedtest
   - AdoptOpenJDK/openjdk
+  - ethereum/ethereum
