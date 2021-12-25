@@ -19,3 +19,4 @@
       tags: 'atom'
     - role: node
       tags: 'node'
+    - role: solana

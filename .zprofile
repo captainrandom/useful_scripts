@@ -38,6 +38,9 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
 # flutter
 export PATH="$PATH:${HOME}/flutter/bin"
 
+# solana tools (cli)
+export PATH="/Users/markjackson/.local/share/solana/install/active_release/bin:$PATH"
+
 # adding local bin
 export PATH=$PATH:${HOME}/.local/bin
 
