@@ -1,11 +1,19 @@
 ---
 
+- name: get latest shift-it download content type
+  shell: curl -sL https://api.github.com/repos/fikovnik/ShiftIt/releases/latest | jq -r ".assets[0].content_type"
+  register: shiftit_content_type
+
+- name: Fail if download is not a zip file
+  ansible.builtin.fail: msg="Installing shift-it supports only zip file downloads. Got {{shiftit_content_type.stdout}}"
+  when: shiftit_content_type.stdout != 'application/zip'
+
 - name: get latest shift-it download url
-  shell: curl -sL https://api.github.com/repos/fikovnik/ShiftIt/releases/latest | jq -r ".zipball_url"
+  shell: curl -sL https://api.github.com/repos/fikovnik/ShiftIt/releases/latest | jq -r ".assets[0].browser_download_url"
   register: shiftit_download_url
 
 - name: get latest shift-it version
-  shell: curl -sL https://api.github.com/repos/fikovnik/ShiftIt/releases/latest | jq -r ".name"
+  shell: curl -sL https://api.github.com/repos/fikovnik/ShiftIt/releases/latest | jq -r ".assets[0].name"
   register: shiftit_version
 
 - name: download shift-it
@@ -16,7 +24,7 @@
 - name: unzip shift-it
   ansible.builtin.unarchive:
     src: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{shiftit_version.stdout}}.zip'
-    dest: /Applications/
+    dest: '{{ansible_env.HOME}}/Applications/'
 
 - name: cleanup shiftit download
   file:

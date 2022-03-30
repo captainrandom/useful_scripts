@@ -8,12 +8,15 @@ export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
+
 # MANPATH
 export MANPATH="$(brew --prefix)/opt/coreutils/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/findutils/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/gnu-tar/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/gnu-sed/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/gnu-indent/libexec/gnuman:$MANPATH"
+
+export PATH="$PATH:/usr/local/texlive/2021/bin/universal-darwin"
 
 # brew path
 export PATH="/usr/local/opt/openssl/bin:$PATH"

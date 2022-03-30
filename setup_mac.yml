@@ -20,3 +20,4 @@
     - role: node
       tags: 'node'
     - role: solana
+      tags: 'solana'
