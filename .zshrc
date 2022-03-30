@@ -140,7 +140,7 @@ if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-conda_path="/Users/${DEFAULT_USER}/anaconda3/bin/conda"
+conda_path="/Users/${DEFAULT_USER}/opt/anaconda3/bin/conda"
 __conda_setup="$(${conda_path} 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
