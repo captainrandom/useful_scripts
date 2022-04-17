@@ -60,6 +60,7 @@ applications:
   - speedtest
   - z
   - ethereum
+  - mysql-connector-c
 
 taps:
   - teamookla/speedtest
