@@ -140,18 +140,22 @@ if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-conda_path="/Users/${DEFAULT_USER}/anaconda3/bin/conda"
+conda_path="/Users/${DEFAULT_USER}/mambaforge/bin/conda"
 __conda_setup="$(${conda_path} 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/Users/${DEFAULT_USER}/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/Users/${DEFAULT_USER}/mambaforge/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/${DEFAULT_USER}/anaconda3/bin:$PATH"
+        export PATH="/Users/${DEFAULT_USER}/mambaforge/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/Users/markjackson/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/Users/markjackson/mambaforge/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"

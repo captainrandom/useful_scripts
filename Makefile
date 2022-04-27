@@ -8,13 +8,16 @@
 ########################################################################
 ########################################################################
 install-anaconda:
-	./install_anaconda.sh
+	./install_anaconda.sh mac
+
+install-mamba:
+	./install_mamba.sh mac
 
 install-requirements:
 	pip install ansible
 	ansible-galaxy collection install community.general
 
-setup: install-anaconda install-requirements
+setup: install-mamba install-requirements
 
 ########################################################################
 ########################################################################
