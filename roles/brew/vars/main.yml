@@ -56,7 +56,7 @@ applications:
   - parquet-tools
   - postgresql
   - gh
-  - adoptopenjdk
+  - java11
   - speedtest
   - z
   - ethereum
@@ -64,5 +64,5 @@ applications:
 
 taps:
   - teamookla/speedtest
-  - AdoptOpenJDK/openjdk
   - ethereum/ethereum
+  - AdoptOpenJDK/openjdk

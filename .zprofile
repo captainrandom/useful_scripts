@@ -72,9 +72,10 @@ export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3.2
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
-# setting java version so 1.8 for spark and flink
-#export DEFAULT_JAVA_VERSION=1.8
-export DEFAULT_JAVA_VERSION=16.0.1
+# setting java version 11 for spark and flink
+#export DEFAULT_JAVA_VERSION=16.0.1
+export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+export DEFAULT_JAVA_VERSION=11.0.15
 export JAVA_HOME=$(/usr/libexec/java_home -v ${DEFAULT_JAVA_VERSION})
 update_java_version() {
     export JAVA_HOME=$(/usr/libexec/java_home -v "${1}")

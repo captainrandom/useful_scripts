@@ -9,3 +9,12 @@
   include_role:
     name: brew
     tasks_from: install_packages.yml
+
+# TODO: at some point need to pull java out into it's own thing
+# actual command: sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+- name: add simlink for java 11
+  ansible.builtin.file:
+    src: /usr/local/opt/openjdk@11/libexec/openjdk.jdk
+    dest: /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+    force: yes
+    state: link
