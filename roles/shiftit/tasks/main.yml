@@ -21,6 +21,11 @@
     url: '{{shiftit_download_url.stdout}}'
     dest: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{shiftit_version.stdout}}.zip'
 
+- name: create Applications dir (if it does not exist)
+  file:
+    path: '{{ansible_env.HOME}}/Applications/'
+    state: directory
+
 - name: unzip shift-it
   ansible.builtin.unarchive:
     src: '{{ansible_env.HOME}}/Downloads/ShiftIt-{{shiftit_version.stdout}}.zip'
