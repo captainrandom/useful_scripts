@@ -13,11 +13,7 @@
     - git_setup
     - role: spark
       spark_version: 3.1.2
-    - role: 'shiftit'
-      tags: 'shiftit'
-    - role: 'atom'
-      tags: 'atom'
-    - role: node
-      tags: 'node'
+    - role: yarn
+      tags: 'yarn'
     - role: solana
       tags: 'solana'

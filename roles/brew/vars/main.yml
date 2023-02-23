@@ -18,24 +18,18 @@ applications:
   - watch
   - wget
   - bash
-  - elixir
-  - emacs
   - gdb  # gdb requires further actions to make it work. See `brew info gdb`.
   - gpatch
   - go
   - m4
   - make
-  - maven
   - nano
   - file-formula
   - git
   - less
   - openssh
-  - perl518   # must run "brew tap homebrew/versions" first!
   - p7zip
   - rsync
-  - nim
-  - svn
   - scala
   - sbt
   - unzip
@@ -48,7 +42,7 @@ applications:
   - gnu-which
   - gpg
   - findutils
-  - node
+  - nvm
   - grep
   - vim
   - jq
@@ -56,12 +50,10 @@ applications:
   - parquet-tools
   - postgresql
   - gh
-  - adoptopenjdk
   - speedtest
   - z
   - ethereum
 
 taps:
   - teamookla/speedtest
-  - AdoptOpenJDK/openjdk
   - ethereum/ethereum
