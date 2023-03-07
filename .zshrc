@@ -116,7 +116,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # setting up z command
-. /usr/local/etc/profile.d/z.sh
+export PATH="/opt/homebrew/bin:$PATH"
+source "$(brew --prefix)/etc/profile.d/z.sh"
+
 
 # setting ls color (this needs to be after oh-my-zsh, because it overrides the color option!!)
 alias ls="ls --color=tty"
@@ -138,23 +140,28 @@ if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users
 # The next line enables shell command completion for gcloud.
 if [ -f "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${DEFAULT_USER}/google-cloud-sdk/completion.zsh.inc"; fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-conda_path="/Users/${DEFAULT_USER}/opt/anaconda3/bin/conda"
-__conda_setup="$(${conda_path} 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/${DEFAULT_USER}/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/${DEFAULT_USER}/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
+eval "$(rbenv init - zsh)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/markski/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/markski/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/markski/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/markski/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/markski/miniconda3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/markski/miniconda3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+

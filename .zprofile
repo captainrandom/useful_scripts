@@ -2,6 +2,15 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# brew path
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(brew --prefix openssl)/bin:$PATH"
+export PATH="$(brew --prefix unzip)/bin:$PATH"
+export PATH="$(brew --prefix ncurses)/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+export PATH="$PATH:/Users/$(whoami)/.local/bin"
+# export PATH="/usr/local/sbin:$PATH"
+
 # GNU
 export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
@@ -16,21 +25,12 @@ export MANPATH="$(brew --prefix)/opt/gnu-tar/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/gnu-sed/libexec/gnuman:MANPATH"
 export MANPATH="$(brew --prefix)/opt/gnu-indent/libexec/gnuman:$MANPATH"
 
-# brew path
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/unzip/bin:$PATH"
-export PATH="/usr/local/opt/ncurses/bin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-export PATH="$PATH:/Users/$(whoami)/.local/bin"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-
 # For compilers to find readline
-export LDFLAGS="-L/usr/local/opt/readline/lib"
-export CPPFLAGS="-I/usr/local/opt/readline/include"
+export LDFLAGS="-L$(brew --prefix readline)/lib"
+export CPPFLAGS="-I$(brew --prefix readline)/include"
 
 # For pkg-config to find readline
-export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
+export PKG_CONFIG_PATH="$(brew --prefix readline)/lib/pkgconfig"
 
 # For compilers to find zlib
 #export LDFLAGS="-L/usr/local/opt/zlib/lib"
@@ -42,22 +42,19 @@ export PKG_CONFIG_PATH="/usr/local/opt/readline/lib/pkgconfig"
 # krew path
 export PATH="${PATH}:${HOME}/.krew/bin"
 
-# istio path
-export PATH="${PATH}:/Users/markjackson/istio-1.14.1/bin"
-
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="$(brew --prefix sqlite)/bin:$PATH"
 
 # For compilers to find sqlite
-export LDFLAGS="-L/usr/local/opt/sqlite/lib"
-export CPPFLAGS="-I/usr/local/opt/sqlite/include"
+export LDFLAGS="-L$(brew --prefix sqlite)/lib"
+export CPPFLAGS="-I$(brew --prefix sqlite)/include"
 
 # For pkg-config to find sqlite
-export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig"
+export PKG_CONFIG_PATH="$(brew --prefix sqlite)/lib/pkgconfig"
 
 # zlib
-export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/zlib/lib"
-export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/zlib/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/zlib/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix zlib)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix zlib)/include"
+export PKG_CONFIG_PATH="$(brew --prefix zlib)/lib/pkgconfig:${PKG_CONFIG_PATH}"
 
 # mysql-client
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
@@ -66,40 +63,54 @@ export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/mysql-client/include"
 export PKG_CONFIG_PATH="/usr/local/opt/mysql-client/lib/pkgconfig"
 
 # mysql-client m1 mac only
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/mysql-client/lib"
-export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/mysql-client/include"
-export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/opt/homebrew/opt/mysql-client/lib/pkgconfig"
+export PATH="$(brew --prefix mysql-client)/bin:$PATH"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix mysql-client)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix mysql-client)/include"
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:$(brew --prefix mysql-client)/lib/pkgconfig"
+
+# postgres
+export PATH="${PATH}:$(brew --prefix postgresql@15)/bin"
 
 # node 16 (brew installation)
-export PATH="/usr/local/opt/node@16/bin:$PATH"
-export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@16/lib"
-export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
-source $(brew --prefix nvm)/nvm.sh
+# export PATH="/usr/local/opt/node@16/bin:$PATH"
+# export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@16/lib"
+# export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
+# source $(brew --prefix nvm)/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$(brew --prefix nvm)/nvm.sh" ] && \. "$(brew --prefix nvm)/nvm.sh"  # This loads nvm
+  [ -s "$(brew --prefix nvm)/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix nvm)/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# yarn
+export PATH="$(yarn global bin):$PATH"
 
 # bison
-export PATH="/opt/homebrew/opt/bison/bin:$PATH"
-export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/bison/lib"
+export PATH="$(brew --prefix bison)/bin:$PATH"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix bison)/lib"
 
 # flex
-export PATH="/opt/homebrew/opt/flex/bin:$PATH"
-export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/flex/lib"
-export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/flex/include"
+export PATH="$(brew --prefix flex)/bin:$PATH"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix flex)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix flex)/include"
 
 # flutter
 export PATH="$PATH:${HOME}/flutter/bin"
 
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # solana tools (cli)
-export PATH="/Users/markjackson/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/Users/$(whoami)/.local/share/solana/install/active_release/bin:$PATH"
 
 # adding local bin
 export PATH=$PATH:${HOME}/.local/bin
 
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/openssl/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/openssl/include"
-export LDFLAGS="${LDFLAGS} -L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="${CPPFLAGS} -I/opt/homebrew/opt/openssl@3/include"
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:${PKG_CONFIG_PATH}"
+export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib"
+export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix openssl)/include"
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig:${PKG_CONFIG_PATH}"
 
 # for airflow
 export AIRFLOW_GPL_UNIDECODE=yes
@@ -118,8 +129,9 @@ export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
 export TOOLCHAINS=swift
 
 # Spark
-export SPARK_VERSION=3.1.2
-export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3.2
+# spark-3.3.2-bin-hadoop3
+export SPARK_VERSION=3.3.2
+export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
 
@@ -189,8 +201,4 @@ alias pg_stop="launchctl unload ~/Library/LaunchAgents"
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
-# pyenv
-#eval "$(pyenv init --path)"
-#alias pyenv86="arch -x86_64 pyenv"
 

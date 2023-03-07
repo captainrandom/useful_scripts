@@ -1,6 +1,0 @@
----
-- name: setup yarn
-  community.general.npm:
-    name: yarn
-    global: yes
-    state: latest

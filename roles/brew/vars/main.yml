@@ -18,7 +18,6 @@ applications:
   - watch
   - wget
   - bash
-  - gdb  # gdb requires further actions to make it work. See `brew info gdb`.
   - gpatch
   - go
   - m4
@@ -47,8 +46,7 @@ applications:
   - vim
   - jq
   - helm
-  - parquet-tools
-  - postgresql
+  - postgresql@15
   - gh
   - speedtest
   - z

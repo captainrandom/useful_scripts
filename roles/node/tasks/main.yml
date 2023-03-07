@@ -1,0 +1,12 @@
+---
+- name: setup node
+  ansible.builtin.command: nvm use 16
+
+- name: setup node
+  ansible.builtin.command: nvm use 18
+
+- name: setup yarn
+  community.general.npm:
+    name: yarn
+    global: yes
+    state: latest
