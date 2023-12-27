@@ -38,8 +38,16 @@ export PATH="/usr/local/opt/node@16/bin:$PATH"
 export LDFLAGS="${LDFLAGS} -L/usr/local/opt/node@16/lib"
 export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/node@16/include"
 
+# nvm install
+source $(brew --prefix nvm)/nvm.sh
+
 # flutter
 export PATH="$PATH:${HOME}/flutter/bin"
+
+# android studio
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # solana tools (cli)
 export PATH="/Users/markjackson/.local/share/solana/install/active_release/bin:$PATH"
@@ -67,7 +75,7 @@ export PATH=$PATH:/Applications/Julia-1.1.app/Contents/Resources/julia/bin
 export TOOLCHAINS=swift
 
 # Spark
-export SPARK_VERSION=3.1.2
+export SPARK_VERSION=3.2.1
 export SPARK_HOME=${HOME}/spark-${SPARK_VERSION}-bin-hadoop3.2
 export PATH=$PATH:${SPARK_HOME}/bin
 export PYSPARK_DRIVER_PYTHON=ipython
